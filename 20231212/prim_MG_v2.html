@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Menyhárt Gergely Team13">
+    <title>prim számítások</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="szam"></div>
+    <div id="prim"></div>
+
+    <script>
+        let a = Number(prompt(`Adj meg egy számot:`));
+        document.getElementById(`szam`).innerHTML = `A <b>${a}</b> számot adtad meg`;
+        if (a < 2) { document.getElementById(`prim`).innerHTML = `A <b>${a}</b> szám <b>NEM PRÍM</b>` }
+        if (a == 2) { document.getElementById(`prim`).innerHTML = `A <>${a}</b> szám <b>PRÍM</b>` }
+        for (let i = 2; i < a; i++) {
+            if (a % i == 0 && a !== 2) { document.getElementById(`prim`).innerHTML = `A <b>${a}</b> szám <b>NEM PRÍM</b>`; break }
+            if (a % i !== 0 && i + 1 == a) { document.getElementById(`prim`).innerHTML = `A <b>${a}</b> szám <b>PRÍM</b>`; break }
+        }
+        document.write(`A <b>${a}</b> szám <b>osztói</b>: `);
+        for (let j = 1; j <= Math.sqrt(a); j++) {
+            if (a % j == 0) { document.write(`${j}, ${a / j}, `) }
+        }
+
+        document.write(`<br> A <b>${a}</b> szám <b>prímtényezős szorzata</b>: `);
+        for (let k = 2; k <= a; k++) {
+            if (a % k == 0) { document.write(`${k}* `); a = a / k; k = 1 }
+        }
+    </script>
+</body>
+
+</html>
