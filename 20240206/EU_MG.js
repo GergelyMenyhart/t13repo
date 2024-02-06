@@ -154,7 +154,7 @@ return sum}
                     function EuCsatlakozasUtolso(adat){
                         let datumIndex=0;
                     for(i=0;i<adat.length;i++){if(Number(adat[i].csatlakozas.replaceAll(".",""))>Number(adat[datumIndex].csatlakozas.replaceAll(".",""))){datumIndex = i}}
-                    return document.write(`Az ${adat[datumIndex].orszag} csatlakozott EU-hoz utoljára<hr>`)}
+                    return document.write(`A(z) ${adat[datumIndex].orszag} csatlakozott EU-hoz utoljára<hr>`)}
                         EuCsatlakozasUtolso(EuropaiUnio)
 
                         // 6.Ország Statisztika, melyik évben hány ország csatlakozot
@@ -164,15 +164,19 @@ return sum}
 // for(i=0;i<adat.length;i++){evenkent.push({ orszag: adat[i].orszag, ev: Number(adat[i].csatlakozas.slice(0, 4)) })}
                         for(i=0;i<adat.length;i++){
                             let sum=0;
-                        for(j=0;j<adat.length;j++){if(adat[i].csatlakozas.slice(0,3)==adat[j].csatlakozas.slice(0,3)){sum++}}
-                        for(k=0;k<evenkent.length;k++){if(evenkent[k].ev!==adat[i].csatlakozas.slice(0,3)){evenkent.push({ ev: adat[i].csatlakozas.slice(0, 3), tagok: sum })}}
+                        for(j=0;j<adat.length;j++){if(adat[i].csatlakozas.slice(0,4)==adat[j].csatlakozas.slice(0,4)){sum++}}
+                        let iter=false
+                        for(k=0;k<evenkent.length;k++){if(evenkent[k].ev==adat[i].csatlakozas.slice(0,4)){iter = true}}
+                        if(iter==false){{ evenkent.push({ ev: adat[i].csatlakozas.slice(0, 4), tagok: sum }) }}
 }
-                        return document.write(evenkent)
+                        return evenkent
 }
                         EuCsatlakozasEvenkent(EuropaiUnio)
 
-
-
+                        function Kiiratas(adat){
+for(i=0;i<adat.length;i++){document.write(`${adat[i].ev}: ${adat[i].tagok}<br>`)}
+}
+                        Kiiratas(EuCsatlakozasEvenkent(EuropaiUnio))
 
                     </script>
-                    <!-- edit your html here -->
+
