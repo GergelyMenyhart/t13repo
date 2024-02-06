@@ -173,8 +173,8 @@ return sum}
 }
                         EuCsatlakozasEvenkent(EuropaiUnio)
 
-                        function Kiiratas(adat){
-for(i=0;i<adat.length;i++){document.write(`${adat[i].ev}: ${adat[i].tagok}<br>`)}
+                        function Kiiratas(tomb){
+for(i=0;i<tomb.length;i++){document.write(`${tomb[i].ev}: ${tomb[i].tagok}<br>`)}
 }
                         Kiiratas(EuCsatlakozasEvenkent(EuropaiUnio))
 
