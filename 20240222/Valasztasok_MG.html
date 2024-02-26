@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Menyhárt Gergely Team13">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Választások</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="col h1 text-center">Választások</div>
+        <div class="row">
+            <div class="col border">
+                <div class="h6 text-center">Hány képviselőjelölt indult a helyhatósági választáson?</div>
+                <div class="text-center"><button class="btn btn-outline-info" id="button1">Válasz</button></div>
+                <div id="answer1" class="text-center" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border">
+                <div class="h6 text-center">Hány képviselőjelölt indult pártonként a helyhatósági választáson?</div>
+                <div class="row">
+                    <div class="col text-center">
+                        <select name="party" id="party" class="form-control">
+                            <option value="GYEP">Gyümölcsevők Pártja</option>
+                            <option value="HEP">Húsevők Pártja</option>
+                            <option value="TISZ">Tejivók Szövetsége</option>
+                            <option value="ZEP">Zöldségevők Pártja</option>
+                            <option value="-">Független jelölt</option>
+                        </select>
+                    </div>
+                    <div class="col text-center"><button class="btn btn-outline-info" id="button2">Válasz</button>
+                    </div>
+                </div>
+                <div id="answer2" class="text-center" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border">
+                <div class="h6 text-center">Hány szavazatot kapott az adott képviselőjelölt a helyhatósági választáson?
+                </div>
+                <div class="row">
+                    <div class="col text-center"><input type="text" id="kepviselo" class="form-control"></div>
+                    <div class="col text-center"><button class="btn btn-outline-info" id="button3">Válasz</button></div>
+                </div>
+                <div id="answer3" class="text-center" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border">
+                <div class="h6 text-center">Hányan szavaztak a helyhatósági választáson?</div>
+                <div class="text-center"><button class="btn btn-outline-info" id="button4">Válasz</button></div>
+                <div id="answer4" class="text-center" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border">
+                <div class="h6 text-center">Határozza meg az adott pártokra leadott szavazatok mennyiségét</div>
+                <div class="text-center"><button class="btn btn-outline-info" id="button5">Táblázat</button></div>
+                <div id="answer5" class="text-center" style="display: none;">
+                    <table class="table table-striped table-hover" id="table">
+                        <caption>Pártonkénti szavazatok</caption>
+                        <tr>
+                            <th>Párt neve</th>
+                            <th>Szavazatok száma</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border">
+                <div class="h6 text-center">Ki kapta a legtöbb szavazatot a helyhatósági választáson?</div>
+                <div class="text-center"><button class="btn btn-outline-info" id="button6">Válasz</button></div>
+                <div id="answer6" class="text-center" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col border">
+                <div class="h6 text-center">Határozza meg a győzteseket választókerületenként</div>
+                <div class="text-center"><button class="btn btn-outline-info" id="button7">Táblázat</button></div>
+                <div id="answer7" class="text-center" style="display: none;">
+                    <table class="table table-striped table-hover" id="table1">
+                        <caption>Választókerületi győztesek</caption>
+                        <tr>
+                            <th>Választókerület</th>
+                            <th>Név</th>
+                            <th>Párt</th>
+                            <th>Szavazatok száma</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="szavazatok_MG.js"></script>
+</body>
+
+</html>
