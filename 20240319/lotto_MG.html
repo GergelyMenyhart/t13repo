@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Menyhárt Gergely Team13">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="lotto_MG.css">
+    <title>Lottósorsolás</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div>Milyen lottót játszanál ?</div>
+            </div>
+            <div class="col form-group">
+                <select name="lottoTipus" id="lottoTipus" class="form-control">
+                    <option value="alap">Lottó tipusok</option>
+                    <option value="590">Ötös Lottó</option>
+                    <option value="645">Hatos Lottó</option>
+                    <option value="735">Skandináv Lottó</option>
+                </select>
+            </div>
+            <div class="col">
+                <div id="lottoLeiras">Kérlek válassz egy lottó tipust!</div>
+            </div>
+            <div class="col">
+                <div>Nyerési esélyek:
+                    <ol id="lottoEselyek">
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="otos" style="display:none">
+            <div class="col">
+                <div class="col">
+                    <input type="number" id="otos1" class="form-control" min="1" max="90"
+                        placeholder="Tippelj egy számot 1-90 között">
+                </div>
+                <div class="col">
+                    <input type="number" id="otos2" class="form-control" min="1" max="90"
+                        placeholder="Tippelj egy számot 1-90 között">
+                </div>
+                <div class="col">
+                    <input type="number" id="otos3" class="form-control" min="1" max="90"
+                        placeholder="Tippelj egy számot 1-90 között">
+                </div>
+                <div class="col">
+                    <input type="number" id="otos4" class="form-control" min="1" max="90"
+                        placeholder="Tippelj egy számot 1-90 között">
+                </div>
+                <div class="col">
+                    <input type="number" id="otos5" class="form-control" min="1" max="90"
+                        placeholder="Tippelj egy számot 1-90 között">
+                </div>
+                <div class="col" id="otosHibaUzenet"></div>
+                <div class="col"><input type="button" id="otosGomb" class="btn btn-outline-success w-100"
+                        value="Számhúzás">
+                </div>
+                <div class="col fs-1 fw-bold px-auto bg-success text-light text-center " id="otosKihuzottSzamok">
+                </div>
+            </div>
+            <div>
+                <table id="otosTabla" class="table table-success table-striped table-hover">
+                    <tr>
+                        <th>Húzás hete</th>
+                        <th>Tippelt számaid</th>
+                        <th>Kihúzott számok</th>
+                        <th>Találatok száma</th>
+                        <th>Legkisebb szám</th>
+                        <th>Legnagyobb szám</th>
+                        <th>Terjedelem</th>
+                    </tr>
+                </table>
+            </div>
+            <div></div>
+        </div>
+        <div class="row" id="hatos" style="display:none">
+            <div class="col">
+                <div class="col">
+                    <input type="number" id="hatos1" class="form-control" min="1" max="45"
+                        placeholder="Tippelj egy számot 1-45 között">
+                </div>
+                <div class="col">
+                    <input type="number" id="hatos2" class="form-control" min="1" max="45"
+                        placeholder="Tippelj egy számot 1-45 között">
+                </div>
+                <div class="col">
+                    <input type="number" id="hatos3" class="form-control" min="1" max="45"
+                        placeholder="Tippelj egy számot 1-45 között">
+                </div>
+                <div class="col">
+                    <input type="number" id="hatos4" class="form-control" min="1" max="45"
+                        placeholder="Tippelj egy számot 1-45 között">
+                </div>
+                <div class="col">
+                    <input type="number" id="hatos5" class="form-control" min="1" max="45"
+                        placeholder="Tippelj egy számot 1-45 között">
+                </div>
+                <div class="col">
+                    <input type="number" id="hatos6" class="form-control" min="1" max="45"
+                        placeholder="Tippelj egy számot 1-45 között">
+                </div>
+                <div class="col" id="hatosHibaUzenet"></div>
+                <div class="col"><input type="button" id="hatosGomb" class="btn btn-outline-info w-100"
+                        value="Számhúzás">
+                </div>
+                <div class="col fs-1 fw-bold px-auto bg-info text-light text-center " id="hatosKihuzottSzamok">
+                </div>
+            </div>
+            <div>
+                <table id="hatosTabla" class="table table-info table-striped table-hover">
+                    <tr>
+                        <th>Húzás hete</th>
+                        <th>Tippelt számaid</th>
+                        <th>Kihúzott számok</th>
+                        <th>Találatok száma</th>
+                        <th>Legkisebb szám</th>
+                        <th>Legnagyobb szám</th>
+                        <th>Terjedelem</th>
+                    </tr>
+                </table>
+            </div>
+            <div></div>
+        </div>
+    </div>
+    <div class="row" id="skandinav" style="display:none">
+        <div class="col">
+            <div class="col">
+                <input type="number" id="skandinav1" class="form-control" min="1" max="35"
+                    placeholder="Tippelj egy számot 1-35 között">
+            </div>
+            <div class="col">
+                <input type="number" id="skandinav2" class="form-control" min="1" max="35"
+                    placeholder="Tippelj egy számot 1-35 között">
+            </div>
+            <div class="col">
+                <input type="number" id="skandinav3" class="form-control" min="1" max="35"
+                    placeholder="Tippelj egy számot 1-35 között">
+            </div>
+            <div class="col">
+                <input type="number" id="skandinav4" class="form-control" min="1" max="35"
+                    placeholder="Tippelj egy számot 1-35 között">
+            </div>
+            <div class="col">
+                <input type="number" id="skandinav5" class="form-control" min="1" max="35"
+                    placeholder="Tippelj egy számot 1-35 között">
+            </div>
+            <div class="col">
+                <input type="number" id="skandinav6" class="form-control" min="1" max="35"
+                    placeholder="Tippelj egy számot 1-35 között">
+            </div>
+            <div class="col">
+                <input type="number" id="skandinav7" class="form-control" min="1" max="35"
+                    placeholder="Tippelj egy számot 1-35 között">
+            </div>
+            <div class="col" id="skandinavHibaUzenet"></div>
+            <div class="col"><input type="button" id="skandinavGomb" class="btn btn-outline-warning w-100"
+                    value="Számhúzás">
+            </div>
+            <div class="col fs-1 fw-bold px-auto bg-warning text-light text-center " id="skandinavKihuzottSzamok">
+            </div>
+        </div>
+        <div>
+            <table id="skandinavTabla" class="table table-warning table-striped table-hover">
+                <tr>
+                    <th>Húzás hete</th>
+                    <th>Tippelt számaid</th>
+                    <th>Kihúzott számok</th>
+                    <th>Találatok száma</th>
+                    <th>Legkisebb szám</th>
+                    <th>Legnagyobb szám</th>
+                    <th>Terjedelem</th>
+                </tr>
+            </table>
+        </div>
+        <div></div>
+    </div>
+    </div>
+    </div>
+
+
+    <script src="lotto_MG.js"></script>
+</body>
+
+</html>
